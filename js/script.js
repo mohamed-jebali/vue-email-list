@@ -15,7 +15,8 @@ createApp({
     data() {
         return {
             listEmail:[],
-            isGenerated: false
+            isGenerated: false,
+            newEmail : '',
         }
     },
 
@@ -24,18 +25,21 @@ createApp({
     },
 
     created(){
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then( (response) => {
-            const result = response.data;
-            console.log(result.response);
 
-            this.listEmail.email = result.response
-            let newEmail = result.response;
-
-            for (let i = 0; i < 10; i++) {
-                this.listEmail.push(newEmail);
-            } 
-
-        });
+        for (let index = 0; index < 10; index++) {
+            
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then( (response) => {
+                const result = response.data;
+                console.log(result.response);
+    
+                this.listEmail.email = result.response
+                this.newEmail = result.response;
+    
+            });
+        }
+        for (let i = 0; i < 10; i++) {
+            this.listEmail.push(this.newEmail);
+        }
     }
 }).mount('#app');
