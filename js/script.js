@@ -14,7 +14,11 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            listEmail:[],
+            listEmail:[
+                {
+                    email:"",
+                }
+            ],
         }
     },
 
@@ -29,6 +33,8 @@ createApp({
         .then( (response) => {
             const result = response.data;
             console.log(result.response);
+
+            this.listEmail.email = result.response
 
         });
     }
