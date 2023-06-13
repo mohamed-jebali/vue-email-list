@@ -15,6 +15,7 @@ createApp({
     data() {
         return {
             listEmail:[],
+            isGenerated: false
         }
     },
 
@@ -34,6 +35,15 @@ createApp({
             for (let i = 0; i < 10; i++) {
                 this.listEmail.push(newEmail);
             } 
+
+                if(this.listEmail.length === 0){
+                    this.isGenerated = true
+                    console.log("Processing");
+                }
+                else{
+                    this.isGenerated = false
+                    console.log("Loaded");
+                }
 
         });
     }
