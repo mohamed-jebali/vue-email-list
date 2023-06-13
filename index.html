@@ -13,6 +13,12 @@
 
     <div id="app">
 
+        <h1 v-if="this.listEmail.length === 10 ? isGenerated = true : isGenerated = false">
+            Loaded
+        </h1>
+        <h1 v-else>
+            Processing...
+        </h1>
     <ul>
         <li v-for="(item, index) in listEmail">
             {{ item }}

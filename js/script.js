@@ -36,15 +36,6 @@ createApp({
                 this.listEmail.push(newEmail);
             } 
 
-                if(this.listEmail.length === 0){
-                    this.isGenerated = true
-                    console.log("Processing");
-                }
-                else{
-                    this.isGenerated = false
-                    console.log("Loaded");
-                }
-
         });
     }
 }).mount('#app');
