@@ -12,9 +12,10 @@
 
 
     <div id="app">
+
     <ul v-for="(item,index) in [listEmail]">
-        <li>
-            {{item.email}}
+        <li v-for="(item, index) in listEmail">
+            {{ item }}
         </li>
     </ul>
     </div>
